@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Cadastrar Carro{% endblock %}
+{% block content %}
+    <form method="post", enctype="multipart/form-data">
+        <!-- csrf_token = proteção contra ataques sqlinjector ... -->
+        {% csrf_token %} 
+        <table>
+            <!-- por conta de usar o createview, usamos o contexto padrão 'form' -->
+            {{ form.as_table }}
+        </table>
+
+        <input type="submit" value="Cadastrar" class="btn btn-primary">
+
+    </form> 
+{% endblock %}
